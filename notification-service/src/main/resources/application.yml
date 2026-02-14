@@ -1,0 +1,54 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: notification-service
+  datasource:
+    url: jdbc:mysql://localhost:3309/notifications_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 3
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+spring.cloud.aws:
+  region:
+    static: ap-south-1
+  sqs:
+    endpoint: http://localhost:4566
+  credentials:
+    access-key: test
+    secret-key: test
+
+# SES config
+aws:
+  ses:
+    endpoint: http://localhost:4566
+  region: ap-south-1
+  credentials:
+    access-key: test
+    secret-key: test
+
+notification:
+  email:
+    from: noreply@ecommerce.com
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
