@@ -656,7 +656,6 @@ ecommerce-platform/
 ├── pom.xml                          ← Parent POM (Spring Boot 3.4.2)
 ├── docker-compose.yml               ← 4 MySQL + Redis + LocalStack
 ├── localstack-init.sh               ← Auto-creates SNS/SQS/DLQ/SES
-├── docs/                            ← Architecture diagrams
 ├── common-lib/                      ← Shared events, DTOs, exceptions
 ├── user-service/                    ← :8081 · users_db (2 tables)
 ├── catalog-service/                 ← :8082 · catalog_db (8 tables)
