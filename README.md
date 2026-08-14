@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Platform — Production Microservices
+ # 🛒 E-Commerce Platform — Production Microservices
 
 > A production-grade microservices e-commerce platform built with **Spring Boot 3.4**, **MySQL** (database-per-service), **AWS SNS/SQS/DLQ**, **AWS SES**, **Redis**, and **Docker**. Designed to handle **millions of concurrent users** with independent per-service scaling.
 
